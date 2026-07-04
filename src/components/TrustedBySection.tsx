@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/asset";
+
 const LOGOS: { file: string; name: string }[] = [
   { file: "ahorra_mas.svg", name: "Ahorramás" },
   { file: "c_and_d_foods.svg", name: "C&D Foods" },
@@ -39,7 +41,7 @@ export function TrustedBySection() {
             <div key={file} className="flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`/images/logos/${file}`}
+                src={withBasePath(`/images/logos/${file}`)}
                 alt={name}
                 className="max-h-10 w-auto object-contain"
               />

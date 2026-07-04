@@ -6,6 +6,7 @@ import {
   ChevronRightIcon,
   ArrowRightIcon,
 } from "@/components/icons";
+import { withBasePath } from "@/lib/asset";
 
 interface NewsCard {
   photo: string;
@@ -153,13 +154,13 @@ export function AlgoriNewsSection() {
               className="flex w-[300px] shrink-0 snap-start flex-col bg-white"
             >
               <img
-                src={card.photo}
+                src={withBasePath(card.photo)}
                 alt={card.headline}
                 className="aspect-[16/10] w-full object-cover"
               />
               <div className="flex flex-1 flex-col p-5">
                 <img
-                  src={card.logo}
+                  src={withBasePath(card.logo)}
                   alt={card.publisher}
                   className="mb-4 h-6 w-auto max-w-[120px] object-contain"
                 />

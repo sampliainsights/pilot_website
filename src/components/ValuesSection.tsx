@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/asset";
+
 const VALUES: { term: string; description: string }[] = [
   { term: "Size", description: "45.000 weekly active shoppers." },
   {
@@ -19,7 +21,7 @@ export function ValuesSection() {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/gradient-bg.png"
+        src={withBasePath("/images/gradient-bg.png")}
         alt=""
         className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60 blur-2xl"
       />

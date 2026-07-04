@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import { withBasePath } from "@/lib/asset";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,14 +17,14 @@ const archia = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://algori.ai"),
+  metadataBase: new URL("https://sampliainsights.github.io"),
   title: "Algori",
   description: "Consumer panel, reimagined.",
-  icons: { icon: "/seo/favicon.ico" },
+  icons: { icon: withBasePath("/seo/favicon.ico") },
   openGraph: {
     title: "Algori",
     description: "Consumer panel, reimagined.",
-    images: ["/seo/opengraph-image.png"],
+    images: [withBasePath("/seo/opengraph-image.png")],
   },
 };
 
