@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const archia = localFont({
+  variable: "--font-archia",
+  display: "swap",
+  src: [{ path: "../../public/fonts/archia-regular.woff2", weight: "400", style: "normal" }],
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  metadataBase: new URL("https://algori.ai"),
+  title: "Algori",
+  description: "Consumer panel, reimagined.",
+  icons: { icon: "/seo/favicon.ico" },
+  openGraph: {
+    title: "Algori",
+    description: "Consumer panel, reimagined.",
+    images: ["/seo/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${archia.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
